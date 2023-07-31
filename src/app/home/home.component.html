@@ -1,0 +1,40 @@
+<h2 class="h2">Welcome</h2>
+
+<form [formGroup]="flightForm" class="mt-3">
+  <div class="row">
+    <div class="mb-3 col-md-3">
+      <label for="date" class="form-label">Pick date</label>
+      <input
+        type="date"
+        class="form-control"
+        id="date"
+        formControlName="selectedDate"
+        min="{{ currentDate }}"
+      />
+    </div>
+    <div class="mb-3 col-md-3">
+      <label for="fromCity" class="form-label">From city</label>
+      <select formControlName="fromCity" id="fromCity" class="form-control">
+        <option *ngFor="let city of cities" [value]="city.code">
+          {{ city.city }}
+        </option>
+      </select>
+    </div>
+    <div class="mb-3 col-md-3">
+      <label for="toCity" class="form-label">To city</label>
+      <select formControlName="toCity" id="toCity" class="form-control">
+        <option *ngFor="let city of cities" [value]="city.code">
+          {{ city.city }}
+        </option>
+      </select>
+    </div>
+    <div class="mb-3 col-md-3">
+      <label class="form-label">&nbsp;</label>
+      <div>
+        <button type="submit" (click)="search()" class="btn btn-primary">
+          Search
+        </button>
+      </div>
+    </div>
+  </div>
+</form>
