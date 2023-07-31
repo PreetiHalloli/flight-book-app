@@ -31,12 +31,16 @@ export class HomeComponent implements OnInit {
     this.getCities();
   }
 
+  /* This method is used to get the list of cities.
+   */
   getCities() {
     this.service.getCities().subscribe((data) => {
       this.cities = data;
     })
   }
 
+  /* This method is used to redirect the user on flight list page.
+   */
   search() {
     let values = this.flightForm.value;
     this.router.navigate(

@@ -48,6 +48,8 @@ export class FlightDetailsComponent implements OnInit {
     this.flightList = this.staticData;
   }
 
+  /* This method is used to filter the selected column
+   */
   filter(column: string, event: any) {
     let searchedValue = event.target.value
     let filteredData: Flights[] = [];
@@ -74,6 +76,8 @@ export class FlightDetailsComponent implements OnInit {
     }
   }
 
+  /* This method is used to sort the column
+   */
   public sort(property: string) {
     this.isDesc = !this.isDesc;
     let direction = this.isDesc ? 1 : -1;
